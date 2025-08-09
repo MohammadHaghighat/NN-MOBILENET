@@ -5,7 +5,7 @@ from timm.optim.adafactor import Adafactor
 from timm.optim.adahessian import Adahessian
 from timm.optim.adamp import AdamP
 from timm.optim.lookahead import Lookahead
-from timm.optim.nadam import Nadam
+from timm.optim.nadamw import NadamW as Nadam
 #from timm.optim.novograd import NovoGrad
 from timm.optim.nvnovograd import NvNovoGrad
 from timm.optim.radam import RAdam
@@ -183,5 +183,6 @@ def create_optimizer(args, model, get_num_layer=None, get_layer_scale=None, filt
     if len(opt_split) > 1:
         if opt_split[0] == 'lookahead':
             optimizer = Lookahead(optimizer)
+
 
     return optimizer
